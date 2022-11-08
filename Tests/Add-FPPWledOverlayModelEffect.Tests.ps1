@@ -20,7 +20,6 @@ Describe -Tags ('Unit') "$ModuleName Function Unit Tests" {
                     [String]
                     $ItemJson
                 )
-                Write-Host "Item inserted into `"$PlaylistName`" playlist"
             }
         }
 
@@ -111,7 +110,6 @@ Describe -Tags ('Unit') "$ModuleName Function Unit Tests" {
                     $ItemJson
                 )
                 throw 'Add-FPPPlaylistItem threw and error'
-                Write-Host "Item inserted into `"$PlaylistName`" playlist"
             }
             {
                 $splat = @{

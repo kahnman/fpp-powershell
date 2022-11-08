@@ -20,7 +20,6 @@ Describe -Tags ('Unit') "$ModuleName Function Unit Tests" {
                     [String]
                     $ItemJson
                 )
-                Write-Host "Item inserted into `"$PlaylistName`" playlist"
             }
         }
 
@@ -61,7 +60,6 @@ Describe -Tags ('Unit') "$ModuleName Function Unit Tests" {
                     $ItemJson
                 )
                 throw 'Add-FPPPlaylistItem threw and error'
-                Write-Host "Item inserted into `"$PlaylistName`" playlist"
             }
             { Add-FPPPlaylistPause -PlaylistName 'Christmas' -DurationSeconds 1 } | Should -Throw 'Failed to insert pause into playlist the "Christmas" playlist: Add-FPPPlaylistItem threw and error'
         }

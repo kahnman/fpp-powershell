@@ -125,9 +125,8 @@ function Copy-FPPEffectFromWled {
 
         Add-FPPPlaylistItem -PlaylistName $PlaylistName -SectionName $SectionName -ItemJson $itemJson
 
-        if ($DurationSeconds -gt 0) {
-            Add-FPPPlaylistPause -PlaylistName $PlaylistName -SectionName $SectionName -DurationSeconds $DurationSeconds
-        }
+        # Add a pause so the effect is actually seen.
+        Add-FPPPlaylistPause -PlaylistName $PlaylistName -SectionName $SectionName -DurationSeconds $DurationSeconds
     } catch {
         throw "Failed to insert WLED effect into playlist the `"$PlaylistName`" playlist: $_"
     }

@@ -74,25 +74,25 @@ function Add-FPPWledOverlayModelEffect {
 
         # The first color to use in hex color code format.
         [Parameter(Mandatory = $false)]
-        [ValidatePattern('^([0-9a-fA-F]){3})$')]
+        [ValidatePattern('([0-9a-fA-F]){3}')]
         [String]
         $Color1 = 'ff0000',
 
         # The second color to use in hex color code format.
         [Parameter(Mandatory = $false)]
-        [ValidatePattern('^([0-9a-fA-F]){3})$')]
+        [ValidatePattern('([0-9a-fA-F]){3}')]
         [String]
         $Color2 = '0000ff',
 
         # The third color to use in hex color code format.
         [Parameter(Mandatory = $false)]
-        [ValidatePattern('^([0-9a-fA-F]){3})$')]
+        [ValidatePattern('([0-9a-fA-F]){3}')]
         [String]
         $Color3 = '000000',
 
         # The amount of time in seconds you want this effect to be going.
         [Parameter(Mandatory = $false)]
-        [ValidateRange(1, [int]::MaxValue)]
+        [ValidateRange(0, [int]::MaxValue)]
         [Int]
         $DurationSeconds = 0
     )

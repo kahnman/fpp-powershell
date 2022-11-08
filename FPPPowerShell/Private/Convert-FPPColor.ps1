@@ -36,7 +36,7 @@ function Convert-FPPColor {
         $RGB,
 
         [Parameter(Mandatory = $true, ParameterSetName = 'HEX', Position = 0)]
-        [ValidatePattern('^([0-9a-fA-F]){3})$')]
+        [ValidatePattern('([0-9a-fA-F]){3}')]
         [string]
         $HEX
     )

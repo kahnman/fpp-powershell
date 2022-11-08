@@ -25,6 +25,7 @@ function Add-FPPPlaylistPause {
 
         # The amount of time in seconds you want this effect to be going.
         [Parameter(Mandatory = $true)]
+        [ValidateRange(1, [int]::MaxValue)]
         [Int]
         $DurationSeconds
     )

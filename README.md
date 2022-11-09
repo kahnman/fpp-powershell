@@ -23,12 +23,18 @@ TODO Write Examples
 Here are some examples, but you can also [check out the docs](Docs/FPPPowerShell.md) for information about each function.
 ## Create a new playlist
 ```powershell
-
+# Create a new empty playlist called "Christmas"
+New-FPPPlaylist -Name 'Christmas'
 ```
 
 ## Create a new playlist entry based on the current visual settings of a local WLED controller.
 ```powershell
+# Create a new empty playlist called "WLED Copy"
+$playlistName = 'WLED Copy'
+New-FPPPlaylist -Name $playlistName
 
+# Copy the currently playing effect and pallet from the WLED controller at '192.168.1.5' to the FPP overlay models called Matrix1 and Matrix2
+Copy-FromWledToFpp -WLEDHost '192.168.1.5' -PlaylistName $playlistName -Models Matrix1, Matrix2 -Brightness 50
 ```
 ## Add an entry to an existing playlist
 

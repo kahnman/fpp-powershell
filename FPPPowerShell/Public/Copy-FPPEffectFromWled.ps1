@@ -7,7 +7,8 @@ function Copy-FPPEffectFromWled {
     Copy the currently playing effect on a WLED controller to the specified FPP playlist.
 
     .EXAMPLE
-    Copy-FPPEffectFromWled
+    Copy-FromWledToFpp -WLEDHost '192.168.1.5' -PlaylistName Test1 -Models Matrix1, Matrix2 -Brightness 50
+    Copy the currently playing effect and pallet from the WLED controller at '192.168.1.5' to the FPP overlay models called Matrix1 and Matrix2
     #>
     [CmdletBinding()]
     param (

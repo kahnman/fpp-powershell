@@ -50,8 +50,8 @@ function Copy-FPPEffectFromWled {
         $BufferMapping = 'Horizontal',
 
         # The amount of time in seconds you want this effect to be going.
-        [Parameter(Mandatory = $true)]
-        [ValidateRange(1, [int]::MaxValue)]
+        [Parameter(Mandatory = $false)]
+        [ValidateRange(0, [int]::MaxValue)]
         [Int]
         $DurationSeconds
     )
@@ -125,8 +125,9 @@ function Copy-FPPEffectFromWled {
 
         Add-FPPPlaylistItem -PlaylistName $PlaylistName -SectionName $SectionName -ItemJson $itemJson
 
-        # Add a pause so the effect is actually seen.
-        Add-FPPPlaylistPause -PlaylistName $PlaylistName -SectionName $SectionName -DurationSeconds $DurationSeconds
+        if ($DurationSeconds -gt 0) {
+            Add-FPPPlaylistPause -PlaylistName $PlaylistName -SectionName $SectionName -DurationSeconds $DurationSeconds
+        }
     } catch {
         throw "Failed to insert WLED effect into playlist the `"$PlaylistName`" playlist: $_"
     }

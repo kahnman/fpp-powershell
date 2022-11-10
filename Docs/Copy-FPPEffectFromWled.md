@@ -15,7 +15,7 @@ Copy the currently playing effect on a WLED controller to the specified FPP play
 ```
 Copy-FPPEffectFromWled [-WLEDHost] <String> [[-WLEDSegment] <Int32>] [-PlaylistName] <String>
  [[-SectionName] <String>] [-Models] <String[]> [[-Brightness] <Int32>] [[-BufferMapping] <String>]
- [-DurationSeconds] <Int32> [<CommonParameters>]
+ [[-DurationSeconds] <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,7 +25,8 @@ Copy the currently playing effect on a WLED controller to the specified FPP play
 
 ### EXAMPLE 1
 ```
-Copy-FPPEffectFromWled
+Copy-FromWledToFpp -WLEDHost '192.168.1.5' -PlaylistName Test1 -Models Matrix1, Matrix2 -Brightness 50
+Copy the currently playing effect and pallet from the WLED controller at '192.168.1.5' to the FPP overlay models called Matrix1 and Matrix2
 ```
 
 ## PARAMETERS
@@ -68,7 +69,7 @@ Type: Int32
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 8
 Default value: 0
 Accept pipeline input: False

@@ -26,7 +26,20 @@ Insert an Overlay Model Effect into the specified section of a playlist
 
 ### EXAMPLE 1
 ```
-Add-FPPWledOverlayModelEffect -PlaylistName 'Christmas' -SectionName 'leadIn'
+$splatParams = @{
+    PlaylistName = 'Christmas'
+    SectionName = 'LeadIn'
+    Models = 'Matrix1','Matrix2'
+    Effect = 'Twinkle'
+    Palette = 'Lava'
+    Brightness = 52
+    Speed = 200
+    Intensity = 100
+    Color1 = 'ff0000'
+    Color2 = '00ff00'
+    Color3 = '0000ff'
+}
+Add-FPPWledOverlayModelEffect @splatParams
 ```
 
 ## PARAMETERS

@@ -12,8 +12,14 @@ Create a new FPP Playlist.
 
 ## SYNTAX
 
+### Name (Default)
 ```
-New-FPPPlaylist [-Json] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
+New-FPPPlaylist -Name <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Json
+```
+New-FPPPlaylist -Json <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,16 +50,46 @@ Create a new playlist called MyNewPlaylist.
 
 ## PARAMETERS
 
+### -Force
+If Force switch is used and the name of the new playlist matches an existing playlist, the existing playlist will be overwritten without warning.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Json
 The JSON that contains the definition of the playlist
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Json
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The Name of your new playlist.
+
+```yaml
+Type: String
+Parameter Sets: Name
+Aliases:
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

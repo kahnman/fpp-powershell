@@ -7,7 +7,7 @@ function Add-FPPPlaylistPause {
     Insert an pause into the specified section of a playlist
 
     .EXAMPLE
-    Add-FPPPlaylistPause -PlaylistName "Christmas" -SectionName 'MainPlaylist -DurationSeconds 60
+    Add-FPPPlaylistPause -PlaylistName 'Christmas' -SectionName 'MainPlaylist' -DurationSeconds 60
     Adds a 1 minute pause to the "Christmas" playlist in the Main Playlist section.
     #>
     [CmdletBinding()]

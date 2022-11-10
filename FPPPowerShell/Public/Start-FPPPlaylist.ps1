@@ -7,7 +7,7 @@ function Start-FPPPlaylist {
     Start the specified playlist.
 
     .EXAMPLE
-    Start-FPPPlaylist -PlaylistName "Christmas"
+    Start-FPPPlaylist -PlaylistName 'Christmas'
     Starts the playlist called "Christmas"
     #>
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'Low')]
